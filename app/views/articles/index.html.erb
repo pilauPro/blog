@@ -1,0 +1,10 @@
+<h1>Articles Index</h1>
+
+<% if @articles.count > 1 %>
+	<% @articles.each do |a| %>
+		<h3><%= a.title %></h3><br>
+		<p><%= a.text %></p><br>
+	<% end %>
+<% else %>
+	<p>NO CAN</p>
+<% end %>
