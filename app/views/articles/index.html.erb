@@ -1,9 +1,19 @@
 <h1>Articles Index</h1>
 
-<% @articles.each do |a| %>
-	<h3><%= a.title %></h3><br>
-	<p><%= a.text %></p><br>
-<% end %>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Text</th>
+		<th colspan="2"></th>
+	</tr>
+	<% @articles.each do |a| %>
+		<tr>
+			<td><%= a.title %></td>
+			<td><%= a.text %></td>
+			<td><%= link_to 'Show', article_path(a) %></td>
+			<td><%= link_to 'Edit', edit_article_path(a) %></td>
+		</tr>
+	<% end %>
+</table>
 
-<%= link_to "New Post", new_article_path %><br>
 <%= link_to "Back", root_path %>
